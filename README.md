@@ -12,18 +12,18 @@ This method clears team info for a player.
 This method adds players to a player TeamInfo.
 
     public void addTeamInfo(Player player, List<Player> playersToAdd) {  
-        Map<UUID, Map<String, Double>> map = new ConcurrentHashMap<>();  
+      Map<UUID, Map<String, Double>> map = new ConcurrentHashMap<>();  
       
       playersToAdd.forEach(members -> {  
             Map<String, Double> position = new HashMap<>();  
       
-     if (members.getPlayer() == null) return;  
+            if (members.getPlayer() == null) return;  
       
-      position.put("x", members.getPlayer().getLocation().getX());  
-      position.put("y", members.getPlayer().getLocation().getY());  
-      position.put("z", members.getPlayer().getLocation().getZ());  
+            position.put("x", members.getPlayer().getLocation().getX());  
+            position.put("y", members.getPlayer().getLocation().getY());  
+            position.put("z", members.getPlayer().getLocation().getZ());  
       
-      map.put(members.getUniqueId(), position);  
+            map.put(members.getUniqueId(), position);  
       });  
       
       LCPacketTeammates teammates = new LCPacketTeammates(player.getUniqueId(), 0L, map);  
