@@ -34,3 +34,4 @@ This method adds players to a player TeamInfo.
 Note: This methods is one time, it needs to keep updating per second. (Do a runnable and use this methods beetween players.)
 
 
+(Contact me if you need help or you have questions about the LunarAPI
